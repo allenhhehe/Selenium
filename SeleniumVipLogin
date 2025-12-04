@@ -1,0 +1,19 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+class yzm_login:
+     def __init__(self):
+         self.url='https://www.vip.com/'
+         self.driver=webdriver.Chrome()
+     def login(self):
+             self.driver.get(self.url)
+             self.driver.maximize_window()
+             time.sleep(5)
+             self.driver.find_element(By.XPATH,'//div[@id="J_top_nav"]//a[@mars_sead="home_top_nav2_login"]').click()
+
+
+log=yzm_login()
+log.login()
